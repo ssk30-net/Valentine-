@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: black;
+            overflow: hidden;
+            position: relative;
+        }
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .container {
+            text-align: center;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            position: relative;
+            z-index: 1;
+        }
+        h1 {
+            font-size: 3em;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .heart {
+            animation: float 2s infinite alternate;
+            font-size: 5em;
+        }
+        .btn-container {
+            margin-top: 20px;
+        }
+        .btn {
+            background-color: white;
+            color: #ff758c;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 10px;
+        }
+        .btn:hover {
+            background-color: #ff7eb3;
+            color: white;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes float {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-20px); }
+        }
+        .fireworks {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiphy.com%2Fexplore%2Ffirework&psig=AOvVaw0LZBp3JVG20Ucg8ljY4fiM&ust=1739113574268000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCNjrx4ittIsDFQAAAAAdAAAAABAE') center/cover;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="C:\Users\HP\OneDrive\Desktop\Remo Proposal scene WhatsApp status _ Sivakarthikeyan _ Keerthi Suresh _ J Editzz.mp4" type="video/mp4">
+        </video>
+    </div>
+    <audio autoplay loop>
+        <source src="C:\Users\HP\OneDrive\Desktop\Remo Proposal scene WhatsApp status _ Sivakarthikeyan _ Keerthi Suresh _ J Editzz.mp3" type="audio/mp3">
+    </audio>
+    <div class="container">
+        <div class="heart">❤️</div>
+        <h1>Will You Be My Valentine?</h1>
+        <div class="btn-container">
+            <button class="btn" onclick="showMessage('Yes')">Yes! 💖</button>
+            <button class="btn" onclick="showMessage('No')">No 💔</button>
+        </div>
+    </div>
+    <div class="fireworks" id="fireworks"></div>
+    <script>
+        function showMessage(answer) {
+            if (answer === 'Yes') {
+                document.getElementById('fireworks').style.display = 'block';
+                setTimeout(() => {
+                    alert('Yay! You made my day! 💕');
+                }, 1000);
+            } else {
+                alert('Oh no! My heart is broken 💔');
+            }
+        }
+    </script>
+</body>
+</html>
